@@ -1,17 +1,17 @@
-<template name="header">
+<template name="header_admin">
   <div class="ui top fixed menu">
     <div class="item">
       <img src="/img/habitat76.jpg" class="ui tiny image">
     </div>
     <div class="right menu">
       {{#if currentUser}}
-        <div class="item" id="signOut">
-          <i class="orange power icon"></i>
-        </div>
+      <div class="item" id="signOut">
+        <i class="orange power icon"></i>
+      </div>
       {{else}}
-        <a href="/sign-in" class="item">
-          <i class="blue user icon"></i>
-        </a>
+      <a href="/sign-in" class="item">
+        <i class="blue user icon"></i>
+      </a>
       {{/if}}
     </div>
   </div>
