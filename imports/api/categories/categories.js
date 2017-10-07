@@ -1,12 +1,13 @@
-Categories = new Mongo.Collection('categories');
-CollectionName.allow({
+export const Categories = new Mongo.Collection('categories');
+
+Categories.allow({
   insert: function() {
-    return false;
+    return true;
   },
   update: function() {
-    return false;
+    return true;
   },
   remove: function() {
-    return false;
+    return true;
   }
 });

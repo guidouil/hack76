@@ -1,0 +1,31 @@
+<template name="categories">
+  <div class="ui container">
+    <div class="ui basic segment">
+      <h1 class="ui left floated header">Administration des catégories</h1>
+      {{#if newCategory}}
+        {{> category}}
+      {{else}}
+        <button type="button" class="ui circular right floated orange icon button" id="newCategory"><i class="add icon"></i></button>
+      {{/if}}
+
+      {{#if categoryId}}
+        {{> category}}
+      {{/if}}
+
+      {{#if categories}}
+        <div class="ui middle aligned items">
+          {{#each categories}}
+            <a class="ui item" href="/categories/{{_id}}">
+              <img src="{{icon.path}}" alt="{{name}}">
+              <div class="content">
+                <a class="header" >
+                  {{name}}
+                </a>
+              </div>
+            </a>
+          {{/each}}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</template>
