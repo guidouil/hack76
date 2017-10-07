@@ -5,7 +5,6 @@
 .head-home{
   height: 380px;
   width: 100%;
-  background-image: url('/img/head-home.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -28,6 +27,7 @@
 .under-title-head{
   color: white;
   font-size: 20px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
 }
 
 .block-title-head{
@@ -36,6 +36,12 @@
   text-align: center;
   top: inherit;
   bottom: 50px;
+}
+
+.title-arbo{
+  top: 50%;
+  transform: translate(0,-50%);
+  bottom: inherit;
 }
 .search-bar{
   margin: 30px auto;
@@ -158,6 +164,18 @@
     transform: translate(0,-50%);
     height: 18px;
   }
-
 }
 
+.block-path{
+  margin-top: 10px;
+}
+
+.block-button-init{
+  display: inline-block;
+  margin: 10px;
+}
+
+.test{
+  text-align: center;
+  margin: 0 auto;
+}
