@@ -1,4 +1,48 @@
 <template name="App_home">
-  {{> hello}}
-  {{> info}}
+  <div class="head-home">
+    <div class="dark-head-home"></div>
+    <div class="block-title-head">
+      <h2 class="title-head">Bienvenue dans l'assistance d'Habitat76</h2>
+      <span class="under-title-head">Gagnez du temps avec notre aide en ligne</span>
+      <form>
+        <div class="search-bar relative">
+          <img src="/img/loupe.png" id="loupe-search" alt="Search">
+          <input placeholder="Rechercher dans l'assistance" type="text" class="search-input remove-input-style">
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 title-init">
+        <div class="block-init">
+          <span class="info-click">Cliquez sur votre question</span>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="button-init">
+          <div class="cadre-img-init">
+            <img class="img-init center-v-h" draggable="false" src="/img/init-1.png" alt="">
+          </div>
+          <p class="text-init">Problème de logement</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="button-init">
+          <div class="cadre-img-init">
+            <img class="img-init center-v-h" draggable="false" src="/img/init-2.png" alt="">
+          </div>
+          <p class="text-init">Problème de logement</p>
+        </div>
+      </div><div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="button-init">
+        <div class="cadre-img-init">
+          <img class="img-init center-v-h" draggable="false" src="/img/init-3.png" alt="">
+        </div>
+        <p class="text-init">Problème de logement</p>
+      </div>
+    </div>
+
+    </div>
+  </div>
 </template>

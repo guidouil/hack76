@@ -1,18 +1,14 @@
 <template name="header">
-  <div class="ui top fixed menu">
-    <div class="item">
-      <img src="/img/habitat76.jpg" class="ui tiny image">
+  <header class="my-header">
+    <div class="block-logo">
+      <div class="cadre-logo">
+        <img src="/img/logo-habitat76.png" alt="" class="logo center-v-h">
+      </div>
     </div>
-    <div class="right menu">
-      {{#if currentUser}}
-        <div class="item" id="signOut">
-          <i class="orange power icon"></i>
-        </div>
-      {{else}}
-        <a href="/sign-in" class="item">
-          <i class="blue user icon"></i>
-        </a>
-      {{/if}}
+    <div class="block-menu">
+      <div class="cadre-link">
+        <a href="" class="link center-v-h">Site initial</a>
+      </div>
     </div>
-  </div>
+  </header>
 </template>
