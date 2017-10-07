@@ -7,6 +7,7 @@ import '../../ui/layouts/admin/admin.js';
 
 import '../../ui/pages/home/home.js';
 import '../../ui/pages/admin/admin.js';
+import '../../ui/pages/arbo/arbo.js';
 import '../../ui/pages/categories/categories.js';
 import '../../ui/pages/not-found/not-found.js';
 
@@ -15,6 +16,13 @@ FlowRouter.route('/', {
   name: 'App.home',
   action() {
     BlazeLayout.render('App_body', { main: 'App_home' });
+  },
+});
+
+FlowRouter.route('/arbo/:categoryId?', {
+  name: 'App.home',
+  action() {
+    BlazeLayout.render('App_body', { main: 'arbo' });
   },
 });
 
