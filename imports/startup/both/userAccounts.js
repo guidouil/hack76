@@ -2,7 +2,7 @@ import { AccountsTemplates } from 'meteor/useraccounts:core';
 
 AccountsTemplates.configure({
   // FlowRouter
-  defaultLayout: 'App_body',
+  defaultLayout: 'App_admin',
   defaultLayoutRegions: {},
   defaultContentRegion: 'main',
   hideSignUpLink: false,
