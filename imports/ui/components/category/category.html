@@ -35,6 +35,12 @@
 
     {{#if isType 'parent'}}
     <div class="field">
+      <div class="ui checkbox">
+        <input type="checkbox" name="isFirst" id="isFirst" checked="{{category.isFirst}}">
+        <label for="isFirst">Catégorie de premier niveau</label>
+      </div>
+    </div>
+    <div class="field">
       <label id="subCategories">Ajouter une sous catégories</label>
       <div class="ui fluid multiple search selection dropdown">
         <input type="hidden" name="subCategories" id="subCategories" value="{{category.subCategories}}">
@@ -81,6 +87,10 @@
       {{/if}}
       <a href="/categories" class="ui orange button">Annuler</a>
       <button type="submit" class="ui green button">Enregistrer</button>
+    </div>
+    <div class="field">
+      <label for="order">Ordre</label>
+      <input type="number" name="order" id="order" value="{{category.order}}">
     </div>
   </form>
 </template>

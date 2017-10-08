@@ -30,7 +30,7 @@ Template.category.onCreated(function() {
 Template.category.onRendered(function() {
   setTimeout(function () {
     $('.dropdown').dropdown({ fullTextSearch: true });
-  }, 200);
+  }, 400);
 });
 
 Template.category.helpers({
@@ -64,10 +64,13 @@ Template.category.events({
     if (category.type === 'help') {
       category.helpText = event.currentTarget.helpText.value;
     }
+    category.isFirst = event.currentTarget.isFirst.checked;
     category.subCategories = event.currentTarget.subCategories.value;
     category.icon = event.currentTarget.icon.value;
     category.iconApp = event.currentTarget.iconApp.value;
     category.background = event.currentTarget.background.value;
+    category.order = Number(event.currentTarget.order.value);
+
     console.log(category);
     const categoryId = FlowRouter.getParam('categoryId');
     if (!categoryId) {

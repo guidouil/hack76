@@ -31,3 +31,5 @@ accounts-password
 useraccounts:flow-routing
 softwarerero:accounts-t9n
 ostrio:files
+session
+u2622:persistent-session

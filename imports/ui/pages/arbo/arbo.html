@@ -2,14 +2,18 @@
   <div class="head-home" style="background-image: url('/img/head-1.png');">
     <div class="dark-head-home"></div>
     <div class="block-title-head title-arbo">
-      <h2 class="title-head">Problème administratif</h2>
+      <h2 class="title-head">{{category.name}}</h2>
       <span class="under-title-head">Toutes les réponses et aides dont vous avez besoin.</span>
     </div>
   </div>
   <div class="container">
     <div class="row">
       <div class="col-md-12 block-path">
-        <span><a href="">Home</a> > <strong>problème de logement</strong></span>
+        <span><a href="/">Home</a>
+          {{#each userPath}}
+            > <strong>{{name}}</strong>
+          {{/each}}
+        </span>
       </div>
       <div class="col-md-12 title-init">
         <div class="block-init">
@@ -17,22 +21,16 @@
         </div>
       </div>
       <div class="test">
-      <div class="block-button-init">
-        <div class="button-init">
-          <div class="cadre-img-init">
-            <img class="img-init center-v-h" draggable="false" src="/img/init-2.png" alt="">
+        {{#each toSubcategories category.subCategories}}
+        <div class="block-button-init categoryIcon">
+          <div class="button-init">
+            <div class="cadre-img-init">
+              <img class="img-init center-v-h" draggable="false" src="{{icon}}" alt="">
+            </div>
+            <p class="text-init">{{name}}</p>
           </div>
-          <p class="text-init">Problème de logement</p>
         </div>
-      </div>
-        <div class="block-button-init">
-      <div class="button-init">
-        <div class="cadre-img-init">
-          <img class="img-init center-v-h" draggable="false" src="/img/init-3.png" alt="">
-        </div>
-        <p class="text-init">Problème de logement</p>
-      </div>
-    </div>
+        {{/each}}
       </div>
 
     </div>
