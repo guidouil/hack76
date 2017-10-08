@@ -4,7 +4,7 @@ import { check } from 'meteor/check';
 import { Categories } from './categories.js';
 
 Meteor.methods({
-  insertCategory({ name, type, isFirst, helpText = '', subCategories = {}, icon = '', iconApp = '', background = '', order = 0 }) {
+  insertCategory({ name, type, isFirst, helpText = '', subCategories = '', icon = '', iconApp = '', background = '', order = 0 }) {
     check(name, String);
     check(type, String);
     check(helpText, String);
@@ -17,7 +17,7 @@ Meteor.methods({
 
     return Categories.insert({ name, type, isFirst, helpText, subCategories, icon, iconApp, background, order });
   },
-  updateCategory(categoryId, { name, type, isFirst, helpText = '', subCategories = {}, icon = '', iconApp = '', background = '', order = 0 }) {
+  updateCategory(categoryId, { name, type, isFirst, helpText = '', subCategories = '', icon = '', iconApp = '', background = '', order = 0 }) {
     check(categoryId, String);
     check(name, String);
     check(type, String);
