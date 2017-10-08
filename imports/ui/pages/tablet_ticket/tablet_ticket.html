@@ -1,3 +1,24 @@
 <template name="tablet_ticket">
-
+    <div class="block-arbo">
+        <div class="path-arbo no-select">
+            <a class="no-select" href="http://localhost:3000/tablet">
+                <div class="block-return no-select">
+                    <img class="icon-return icon-return no-select" draggable="false" src="/img/arrow.png" alt="">
+                    <span>Retour</span>
+                </div>
+            </a>
+            <div class="block-frw">
+                <div class="frw">
+                    <span>cuisine /</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="title-arbo no-select">
+        <span>Laissez nous un message</span>
+    </div>
+    <form class="form-ticket" action="">
+        <textarea name="ticket" id="text-ticket" placeholder="Détails, commentaires, horaire de passage..."></textarea>
+        <button id="send-ticket">Envoyer</button>
+    </form>
 </template>
