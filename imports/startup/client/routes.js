@@ -4,6 +4,7 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 // Import needed templates
 import '../../ui/layouts/body/body.js';
 import '../../ui/layouts/admin/admin.js';
+import '../../ui/layouts/tablet/tablet.js';
 
 import '../../ui/pages/home/home.js';
 import '../../ui/pages/admin/admin.js';
@@ -48,35 +49,35 @@ FlowRouter.route('/categories/:categoryId?', {
 FlowRouter.route('/tablet', {
   name: 'App.tablet',
   action() {
-    BlazeLayout.render('App_body', { main: 'tablet' });
+    BlazeLayout.render('App_tablet', { main: 'tablet' });
   },
 });
 
 FlowRouter.route('/tablet/arbo', {
   name: 'App.tablet_arbo',
   action() {
-    BlazeLayout.render('App_body', { main: 'tablet_arbo' });
+    BlazeLayout.render('App_tablet', { main: 'tablet_arbo' });
   },
 });
 
 FlowRouter.route('/tablet/ticket', {
   name: 'App.tablet_ticket',
   action() {
-    BlazeLayout.render('App_body', { main: 'tablet_ticket' });
+    BlazeLayout.render('App_tablet', { main: 'tablet_ticket' });
   },
 });
 
 FlowRouter.route('/tablet/suivi', {
   name: 'App.tablet_suivi',
   action() {
-    BlazeLayout.render('App_body', { main: 'tablet_suivi' });
+    BlazeLayout.render('App_tablet', { main: 'tablet_suivi' });
   },
 });
 
 FlowRouter.route('/tablet/details', {
   name: 'App.tablet_details',
   action() {
-    BlazeLayout.render('App_body', { main: 'tablet_details' });
+    BlazeLayout.render('App_tablet', { main: 'tablet_details' });
   },
 });
 
