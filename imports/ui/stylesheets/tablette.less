@@ -80,20 +80,21 @@ body{
 .block-button{
   display: flex;
   justify-content: space-evenly;
+  margin-top: 100px;
 }
 
-.button-home{
+.button-home {
   position: relative;
   width: 365px;
-  padding:15px 40px;
+  padding: 15px 40px;
   background-color: white;
   color: @red;
   font-size: 30px;
   border-radius: 100px;
   text-align: center;
-  margin-top: 100px;
-  &:hover{
-    background-color: rgba(255, 255, 255, 0.8);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.8);
   }
 }
 
@@ -107,5 +108,158 @@ body{
 
 .block-home{
   width: 100%;
+}
+.block-return{
+  width: 100%;
+  display: flex;
+  color: white;
+  font-size: 30px;
+  font-weight: 400;
+  margin-right: 20px;
+}
+.block-arbo{
+  padding: 20px;
+}
+
+.icon-return{
+  margin-right: 15px;
+}
+
+.title-arbo{
+  color: white;
+  margin-top: 50px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 41px;
+}
+
+.block-choice{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.problem{
+  width: 230px;
+  height: 230px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 10px;
+  position: relative;
+  transform: scale(1);
+  transition: all ease 0.3s;
+  opacity: 1;
+  &.active{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.cadre-icon-pb{
+  width: 230px;
+  height: 160px;
+  padding: 25px;
+  position: relative;
+}
+.icon-pb{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-height: 120px;
+}
+.text-u-pb{
+  color: @red;
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  font-weight: bold;
+  font-size: 34px;
+  left: 50%;
+  transform: translate(-50%,0);
+  width: 90%;
+}
+
+.path-arbo{
+  display: flex;
+  color: white;
+  font-size: 30px;
+  font-weight: 300;
+}
+.block-frw{
+  padding-left: 20px;
+  border-left: 2px solid white;
+}
+
+.select-bar{
+  width: 600px;
+  font-size: 28px;
+  padding: 8px 0;
+  border: 2px solid white;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 10px;
+  padding-right: 65px;
+  position: relative;
+
+  &.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    & .down-box-select{
+      max-height: 1000px;
+      box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.16);
+    }
+  }
+}
+
+.block-select{
+  margin-top: 20px;
+}
+.cadre-icon-sb{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 80px;
+  border-left: 2px solid white
+}
+.icon-sb{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+}
+.down-box-select{
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 0px 0px 10px 10px;
+  transition: all ease 0.3s;
+  max-height: 0;
+  overflow: hidden;
+}
+.select{
+  color: white;
+  font-size: 27px;
+  margin: 6px;
+  padding: 10px 0;
+  position: relative;
+  &:after{
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 2px;
+    border-radius: 2px;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%,0);
+    background-color: white;
+  }
+  &:last-child{
+    &:after{
+      background-color: transparent;
+    }
+  }
 }
 
