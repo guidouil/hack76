@@ -22,6 +22,7 @@ Template.category.onCreated(function() {
       });
       if (category) {
         instance.category.set(category);
+        instance.type.set(category.type);
       }
     }
   });
@@ -64,8 +65,12 @@ Template.category.events({
     if (category.type === 'help') {
       category.helpText = event.currentTarget.helpText.value;
     }
-    category.isFirst = event.currentTarget.isFirst.checked;
-    category.subCategories = event.currentTarget.subCategories.value;
+    if (event.currentTarget.isFirst) {
+      category.isFirst = event.currentTarget.isFirst.checked;
+    }
+    if (event.currentTarget.subCategories) {
+      category.subCategories = event.currentTarget.subCategories.value;
+    }
     category.icon = event.currentTarget.icon.value;
     category.iconApp = event.currentTarget.iconApp.value;
     category.background = event.currentTarget.background.value;

@@ -33,26 +33,26 @@
     </div>
     {{/if}}
 
-    {{#if isType 'parent'}}
     <div class="field">
       <div class="ui checkbox">
         <input type="checkbox" name="isFirst" id="isFirst" checked="{{category.isFirst}}">
         <label for="isFirst">Catégorie de premier niveau</label>
       </div>
     </div>
-    <div class="field">
-      <label id="subCategories">Ajouter une sous catégories</label>
-      <div class="ui fluid multiple search selection dropdown">
-        <input type="hidden" name="subCategories" id="subCategories" value="{{category.subCategories}}">
-        <i class="dropdown icon"></i>
-        <div class="default text">Choisir des catégories filles</div>
-        <div class="menu">
-          {{#each categories}}
-            <div class="item" data-value="{{_id}}">{{name}}</div>
-          {{/each}}
+    {{#if isType 'parent'}}
+      <div class="field">
+        <label id="subCategories">Ajouter une sous catégories</label>
+        <div class="ui fluid multiple search selection dropdown">
+          <input type="hidden" name="subCategories" id="subCategories" value="{{category.subCategories}}">
+          <i class="dropdown icon"></i>
+          <div class="default text">Choisir des catégories filles</div>
+          <div class="menu">
+            {{#each categories}}
+              <div class="item" data-value="{{_id}}">{{name}}</div>
+            {{/each}}
+          </div>
         </div>
       </div>
-    </div>
     {{/if}}
     <div class="three fields">
       <div class="field">

@@ -53,7 +53,7 @@ FlowRouter.route('/tablet', {
   },
 });
 
-FlowRouter.route('/tablet/arbo', {
+FlowRouter.route('/tablet/arbo/:categoryId?', {
   name: 'App.tablet_arbo',
   action() {
     BlazeLayout.render('App_tablet', { main: 'tablet_arbo' });

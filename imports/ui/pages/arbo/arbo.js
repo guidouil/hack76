@@ -41,7 +41,7 @@ Template.arbo.helpers({
   },
   currentCateg() {
     return this._id === FlowRouter.getParam('categoryId');
-  }
+  },
 });
 
 Template.arbo.events({

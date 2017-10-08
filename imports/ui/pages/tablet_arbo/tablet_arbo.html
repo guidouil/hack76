@@ -1,123 +1,73 @@
 <template name="tablet_arbo">
     <div class="block-arbo">
         <div class="path-arbo no-select">
-            <a class="no-select" href="http://localhost:3000/tablet">
+            <a class="no-select back" href="/tablet">
                 <div class="block-return no-select">
                     <img class="icon-return icon-return no-select" draggable="false" src="/img/arrow.png" alt="">
                     <span>Retour</span>
                 </div>
             </a>
-            {{#if isCat_id 1}}
+            {{#if categoryId}}
             <div class="block-frw">
                 <div class="frw">
-                    <span>cuisine /</span>
+                    {{#each userPath}}
+                    <span>{{name}} /</span>
+                    {{/each}}
                 </div>
             </div>
             {{/if}}
         </div>
-        {{#if isCat_id 1 }}
-        <div class="title-arbo no-select">
-            <span>Quelle est la nature du problème ?</span>
-        </div>
-        <div class="block-choice">
-            <div class="problem">
+        {{#unless categoryId}}
+            <div class="title-arbo no-select">
+                <span>Où se situe votre problème ?</span>
+            </div>
+            <div class="block-choice">
+                {{#each categories}}
+                <div class="problem category">
                     <div class="cadre-icon-pb">
-                    <img class="icon-pb no-select" draggable="false" src="/img/cuisine.png" alt="">
-                </div>
-                <span class="text-u-pb no-select">Eau</span>
-            </div>
-            <div class="problem">
-                <div class="cadre-icon-pb">
-                    <img class="icon-pb no-select" draggable="false" src="/img/bain.png" alt="">
-                </div>
-                <span class="text-u-pb no-select">Electricté</span>
-            </div>
-            <div class="problem">
-                <div class="cadre-icon-pb">
-                    <img class="icon-pb no-select" draggable="false" src="/img/chambre.png" alt="">
-                </div>
-                <span class="text-u-pb no-select">Gaz</span>
-            </div>
-            <div class="problem">
-                <div class="cadre-icon-pb">
-                    <img class="icon-pb no-select" draggable="false" src="/img/toilet.png" alt="">
-                </div>
-                <span class="text-u-pb no-select">Sol, mur, plafond</span>
-            </div>
-            <div class="problem">
-                <div class="cadre-icon-pb">
-                    <img class="icon-pb no-select" draggable="false" src="/img/salon.png" alt="">
-                </div>
-                <span class="text-u-pb no-select">Autre</span>
-            </div>
-        </div>
-        {{else}}
-        {{#if isCat_id 2 }}
-        <div class="title-arbo no-select">
-            <span>D'où vient le problème ?</span>
-        </div>
-        <div class="block-select">
-            <div class="select-bar">
-                <div class="cadre-icon-sb">
-                    <img class="icon-sb" src="/img/arrow-down.png" alt="">
-                </div>
-                <span>Sélectionnez dans la liste</span>
-                <div class="down-box-select">
-                    <div class="select">J'ai une fuite</div>
-                    <div class="select">Je dois déboucher</div>
-                    <div class="select">Un élément est cassé ou fendu</div>
-                    <div class="select">Je souhaite remplacer ou poser un élément</div>
-                    <div class="select">Mon problème n'est pas répertorié</div>
-                </div>
-            </div>
-        </div>
-
-        {{else}}
-        <div class="title-arbo no-select">
-            <span>Où se situe votre problème ?</span>
-        </div>
-        <div class="block-choice">
-            <a href="http://localhost:3000/tablet/arbo?cat_id=1">
-                <div class="problem">
-                    <div class="cadre-icon-pb">
-                        <img class="icon-pb no-select" draggable="false" src="/img/cuisine.png" alt="">
+                        <img class="icon-pb no-select" draggable="false" src="{{iconApp}}" alt="">
                     </div>
-                    <span class="text-u-pb no-select">Cuisine</span>
+                    <span class="text-u-pb no-select">{{name}}</span>
                 </div>
-            </a>
-            <div class="problem">
-                <div class="cadre-icon-pb">
-                    <img class="icon-pb no-select" draggable="false" src="/img/bain.png" alt="">
-                </div>
-                <span class="text-u-pb no-select">Salle de bain</span>
+                {{/each}}
             </div>
-            <div class="problem">
-                <div class="cadre-icon-pb">
-                    <img class="icon-pb no-select" draggable="false" src="/img/chambre.png" alt="">
-                </div>
-                <span class="text-u-pb no-select">Chambre</span>
+        {{else}}
+
+            {{#if isLast}}
+            <div class="title-arbo no-select">
+                <span>D'où vient le problème ?</span>
             </div>
-            <div class="problem">
-                <div class="cadre-icon-pb">
-                    <img class="icon-pb no-select" draggable="false" src="/img/toilet.png" alt="">
+            <div class="block-select">
+                <div class="select-bar">
+                    <div class="cadre-icon-sb">
+                        <img class="icon-sb" src="/img/arrow-down.png" alt="">
+                    </div>
+                    <span>Sélectionnez dans la liste</span>
+                    <div class="down-box-select">
+                        {{#each categories}}
+                        <div class="select" value="{{_id}}">{{name}}</div>
+                        {{/each}}
+                    </div>
                 </div>
-                <span class="text-u-pb no-select">Toilettes</span>
             </div>
-            <div class="problem">
-                <div class="cadre-icon-pb">
-                    <img class="icon-pb no-select" draggable="false" src="/img/salon.png" alt="">
-                </div>
-                <span class="text-u-pb no-select">Salle / Salon</span>
+
+            {{else}}
+            <div class="title-arbo no-select">
+                <span>Quelle est la nature du problème ?</span>
             </div>
-            <div class="problem">
-                <div class="cadre-icon-pb">
-                    <img class="icon-pb no-select" draggable="false" src="/img/autre.png" alt="">
-                </div>
-                <span class="text-u-pb no-select">Autres</span>
+            <div class="block-choice">
+                {{#each categories}}
+
+                    <div class="problem category">
+                        <div class="cadre-icon-pb">
+                            <img class="icon-pb no-select" draggable="false" src="{{iconApp}}" alt="">
+                        </div>
+                        <span class="text-u-pb no-select">{{name}}</span>
+                    </div>
+                {{/each}}
             </div>
-        </div>
-        {{/if}}
-        {{/if}}
+            {{/if}}
+        {{/unless}}
 
 
     </div>
