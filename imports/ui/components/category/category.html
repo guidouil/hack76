@@ -36,11 +36,16 @@
     {{#if isType 'parent'}}
     <div class="field">
       <label id="subCategories">Ajouter une sous catégories</label>
-      <select class="ui fluid search dropdown" multiple="" id="subCategories">
-        {{#each categories}}
-          <option value="{{_id}}">{{name}}</option>
-        {{/each}}
-      </select>
+      <div class="ui fluid multiple search selection dropdown">
+        <input type="hidden" name="subCategories" id="subCategories" value="{{category.subCategories}}">
+        <i class="dropdown icon"></i>
+        <div class="default text">Choisir des catégories filles</div>
+        <div class="menu">
+          {{#each categories}}
+            <div class="item" data-value="{{_id}}">{{name}}</div>
+          {{/each}}
+        </div>
+      </div>
     </div>
     {{/if}}
     <div class="three fields">
@@ -48,15 +53,15 @@
         <label id="icon">Icône de la catégorie</label>
         <div class="ui icon input iconInput">
           <i class="file icon"></i>
-          <input type="text" placeholder="Parcourir..." id="icon" readonly>
+          <input type="text" placeholder="/img/..." id="icon" name="icon">
         </div>
         <input type="file" class="hidden" id="iconFile">
       </div>
       <div class="field">
-        <label id="iconApp">Icône de l'App'</label>
+        <label id="iconApp">Icône pour l'App'</label>
         <div class="ui icon input iconAppInput">
-          <i class="file icon"></i>
-          <input type="text" placeholder="Parcourir..." id="iconApp" readonly>
+          <i class="file outline icon"></i>
+          <input type="text" placeholder="/img/..." id="iconApp" name="iconApp">
         </div>
         <input type="file" class="hidden" id="iconAppFile">
       </div>
@@ -64,7 +69,7 @@
         <label id="background">Fond de la catégorie</label>
         <div class="ui icon input backgroundInput">
           <i class="picture icon"></i>
-          <input type="text" placeholder="Parcourir..." id="background" readonly>
+          <input type="text" placeholder="/img/..." id="background" name="background">
         </div>
         <input type="file" class="hidden" id="backgroundFile">
       </div>

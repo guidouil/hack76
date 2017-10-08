@@ -3,12 +3,17 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 import { Categories } from '/imports/api/categories/categories.js';
 
+import Images from '/imports/api/images/images.js';
+
 import './category.html';
 
 Template.category.onCreated(function() {
   const instance = this;
   instance.type = new ReactiveVar('parent');
   instance.category = new ReactiveVar();
+  instance.icon = new ReactiveVar();
+  instance.iconApp = new ReactiveVar();
+  instance.background = new ReactiveVar();
   instance.autorun(function() {
     const categoryId = FlowRouter.getParam('categoryId');
     if (categoryId) {
@@ -23,7 +28,9 @@ Template.category.onCreated(function() {
 });
 
 Template.category.onRendered(function() {
-  $('.dropdown').dropdown({ fullTextSearch: true });
+  setTimeout(function () {
+    $('.dropdown').dropdown({ fullTextSearch: true });
+  }, 200);
 });
 
 Template.category.helpers({
@@ -32,6 +39,12 @@ Template.category.helpers({
   },
   category() {
     return Template.instance().category.get();
+  },
+  icon() {
+    return Template.instance().icon.get();
+  },
+  iconApp() {
+    return Template.instance().icon.get();
   },
   categories() {
     return Categories.find().fetch();
@@ -51,6 +64,7 @@ Template.category.events({
     if (category.type === 'help') {
       category.helpText = event.currentTarget.helpText.value;
     }
+    category.subCategories = event.currentTarget.subCategories.value;
     const categoryId = FlowRouter.getParam('categoryId');
     if (!categoryId) {
       Meteor.call('insertCategory', category, function(error, success) {
