@@ -1,0 +1,111 @@
+@red:  #c60b35;
+
+* {-webkit-font-smoothing: antialiased;}
+
+body{
+  line-height: initial;
+}
+
+.global-wrapper{
+  height: 100vh;
+  width: 100%;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cc0000+0,ef8002+100 */
+  background: #cc0000; /* Old browsers */
+  background: -moz-linear-gradient(top, #cc0000 0%, #ef8002 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #cc0000 0%,#ef8002 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #cc0000 0%,#ef8002 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc0000', endColorstr='#ef8002',GradientType=0 ); /* IE6-9 */
+}
+.wrapper{
+  height: 100vh;
+  width: 100%;
+}
+
+.hour,.date{
+  display: block;
+  margin: 0 auto;
+}
+
+.block-time{
+  font-weight: 300;
+  position: relative;
+  color: white;
+  padding-right: 25px;
+  text-align: center;
+  &:after{
+    content: '';
+    position: absolute;
+    width: 1px;
+    border-radius: 2px;
+    height: 80%;
+    left: 100%;
+    top: 50%;
+    transform: translate(0,-45%);
+    background-color: white;
+  }
+}
+
+.block-time-temp{
+  display: flex;
+  justify-content: center;
+}
+
+.hour{
+  font-size: 128px;
+}
+.date{
+  font-size: 32px;
+}
+
+.block-temperature,.block-time{
+  display: inline-block;
+}
+
+.temp{
+  font-size: 40px;
+  color: white;
+  margin-top: 35px;
+}
+
+#icon-temp{
+  height: 70px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px ;
+}
+
+.block-temperature{
+  margin-left: 25px;
+}
+.block-button{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button-home{
+  position: relative;
+  width: 365px;
+  padding:15px 40px;
+  background-color: white;
+  color: @red;
+  font-size: 30px;
+  border-radius: 100px;
+  text-align: center;
+  margin-top: 100px;
+  &:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.icon-button-home{
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translate(0, -50%);
+  height: 45px;
+}
+
+.block-home{
+  width: 100%;
+}
+
