@@ -33,8 +33,7 @@ Template.tablet_arbo.helpers({
             const categories = Categories.find({ _id: { $in: subCategs}}, {sort: {order: 1}}).fetch();
             if (categories) {
                 _.each(categories, function (category) {
-                    console.log(category);
-                   if (category.type === 'help' || category.type === 'ticket') {
+                   if (category.type === 'ticket') {
                        Template.instance().isLast.set(true);
                    }
                 });
@@ -58,10 +57,15 @@ Template.tablet_arbo.events({
         }
         userPath.push({ _id: this._id, name: this.name });
         Session.set('userPath', userPath);
-        FlowRouter.go(`/tablet/arbo/${this._id}`);
-        setTimeout(function () {
-            $('.problem').addClass('active');
-        }, 50);
+
+        if (this.type === 'help') {
+            FlowRouter.go('/tablet/ticket')
+        } else {
+            FlowRouter.go(`/tablet/arbo/${this._id}`);
+            setTimeout(function () {
+                $('.problem').addClass('active');
+            }, 50);
+        }
     },
     'click .select-bar'(event) {
         $(event.currentTarget).toggleClass('active');
