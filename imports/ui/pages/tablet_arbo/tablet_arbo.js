@@ -10,17 +10,15 @@ Template.tablet_arbo.onCreated(function() {
 });
 
 Template.tablet_arbo.onRendered(function (){
-    setTimeout(function(){
-        $('.problem').addClass('active');
-    },50);
 
-    $('.select-bar').on('click', function(){
-        console.log('yaya');
-        $(this).toggleClass('active');
-    })
 });
 
 Template.tablet_arbo.helpers({
+    initAnim() {
+        setTimeout(function () {
+            $('.problem').addClass('active');
+        }, 50);
+    },
     userPath() {
         return Session.get('userPath');
     },
@@ -32,7 +30,7 @@ Template.tablet_arbo.helpers({
         const category = Categories.findOne({ _id: categoryId});
         if (category) {
             const subCategs = category.subCategories.split(',');
-            const categories = Categories.find({ _id: { $in: subCategs}}).fetch();
+            const categories = Categories.find({ _id: { $in: subCategs}}, {sort: {order: 1}}).fetch();
             if (categories) {
                 _.each(categories, function (category) {
                     console.log(category);
@@ -61,6 +59,9 @@ Template.tablet_arbo.events({
         userPath.push({ _id: this._id, name: this.name });
         Session.set('userPath', userPath);
         FlowRouter.go(`/tablet/arbo/${this._id}`);
+        setTimeout(function () {
+            $('.problem').addClass('active');
+        }, 50);
     },
     'click .select-bar'(event) {
         $(event.currentTarget).toggleClass('active');
