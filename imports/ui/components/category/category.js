@@ -65,6 +65,10 @@ Template.category.events({
       category.helpText = event.currentTarget.helpText.value;
     }
     category.subCategories = event.currentTarget.subCategories.value;
+    category.icon = event.currentTarget.icon.value;
+    category.iconApp = event.currentTarget.iconApp.value;
+    category.background = event.currentTarget.background.value;
+    console.log(category);
     const categoryId = FlowRouter.getParam('categoryId');
     if (!categoryId) {
       Meteor.call('insertCategory', category, function(error, success) {

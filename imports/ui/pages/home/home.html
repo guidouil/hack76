@@ -19,29 +19,32 @@
           <span class="info-click">Cliquez sur votre question</span>
         </div>
       </div>
+      {{#each categories}}
       <div class="col-md-4 col-sm-4 col-xs-12">
-        <div class="button-init">
+        <div class="button-init categoryIcon" href="/arbo/{{_id}}">
           <div class="cadre-img-init">
-            <img class="img-init center-v-h" draggable="false" src="/img/init-1.png" alt="">
+            <img class="img-init center-v-h" draggable="false" src="{{icon}}" alt="">
           </div>
-          <p class="text-init">Problème de logement</p>
+          <p class="text-init">{{name}}</p>
         </div>
       </div>
-      <div class="col-md-4 col-sm-4 col-xs-12">
+      {{/each}}
+      <!-- <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="button-init">
           <div class="cadre-img-init">
             <img class="img-init center-v-h" draggable="false" src="/img/init-2.png" alt="">
           </div>
           <p class="text-init">Problème de logement</p>
         </div>
-      </div><div class="col-md-4 col-sm-4 col-xs-12">
-      <div class="button-init">
-        <div class="cadre-img-init">
-          <img class="img-init center-v-h" draggable="false" src="/img/init-3.png" alt="">
-        </div>
-        <p class="text-init">Problème de logement</p>
       </div>
-    </div>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="button-init">
+          <div class="cadre-img-init">
+            <img class="img-init center-v-h" draggable="false" src="/img/init-3.png" alt="">
+          </div>
+          <p class="text-init">Problème de logement</p>
+        </div>
+      </div> -->
 
     </div>
   </div>
